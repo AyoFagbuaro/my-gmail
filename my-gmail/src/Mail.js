@@ -2,7 +2,11 @@ import React from "react";
 import "./Mail.css";
 
 function Mail() {
-  return <div></div>;
+  return (
+    <div>
+      <h1>AAAAAAAa</h1>
+    </div>
+  );
 }
 
 export default Mail;
