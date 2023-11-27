@@ -5,7 +5,12 @@ import SideBar from "./SideBar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Mail from "./Mail";
 import EmailList from "./EmailList";
+import SendMail from "./SendMail";
+import { useSelector } from "react-redux";
+import { selectSendMessageIsOpen } from "./features/mailSlice";
+
 function App() {
+  const sendMessageIsOpen = useSelector(selectSendMessageIsOpen); // useSelector is a hook that allows you to extract data from the Redux store state, using a selector function.
   return (
     <Router>
       <div className="app">
@@ -22,6 +27,7 @@ function App() {
             </Route>
           </Switch>
         </div>
+        {sendMessageIsOpen && <SendMail />}
       </div>
     </Router>
   );
